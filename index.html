@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microsoft Security Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { background-color: #1a1a1a; color: white; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; }
+        .container { background-color: #252525; border: 1px solid #444; border-radius: 8px; padding: 30px; max-width: 350px; margin: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .logo-text { font-weight: bold; font-size: 20px; margin-bottom: 5px; }
+        .sub-header { color: #0078d4; font-size: 12px; font-weight: bold; margin-bottom: 25px; letter-spacing: 1px; }
+        
+        /* Health Bar */
+        .health-bar-bg { background: #444; height: 10px; border-radius: 5px; margin: 10px 0; overflow: hidden; }
+        #health-fill { background: #107c10; width: 100%; height: 100%; transition: 0.3s; }
+        
+        /* Input Fields - Forced Visibility */
+        .input-group { margin-bottom: 15px; text-align: left; }
+        label { display: block; font-size: 12px; margin-bottom: 5px; color: #aaa; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            background: #333; 
+            border: 1px solid #555; 
+            color: white; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            font-size: 16px;
+        }
+        
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            background: #0078d4; 
+            color: white; 
+            border: none; 
+            font-weight: bold; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            margin-top: 10px;
+        }
+        #msg { margin-top: 15px; font-size: 13px; font-weight: bold; min-height: 20px; color: #d13438; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="box">
+    <div class="logo-text">Microsoft Security</div>
+    <div class="sub-header">INTERNAL ATTACK SIMULATOR</div>
+
+    <div style="text-align: left; font-size: 11px; color: #888;">FIREWALL INTEGRITY: <span id="hp-num">100</span>%</div>
+    <div class="health-bar-bg">
+        <div id="health-fill"></div>
+    </div>
+
+    <div id="login-fields">
+        <div class="input-group">
+            <label>Employee Name</label>
+            <input type="text" id="username" placeholder="e.g. John Doe">
+        </div>
+        
+        <div class="input-group">
+            <label>4-Digit PIN</label>
+            <input type="password" id="pin" placeholder="****" maxlength="4">
+        </div>
+
+        <button onclick="doAttack()">SIGN IN</button>
+        <div id
